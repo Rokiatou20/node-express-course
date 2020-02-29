@@ -11,10 +11,12 @@ app.listen(8000, function(){
     console.log("Server is running");
 })
 
-app.get('/Users', function(req, res){
+app.get('/Users/:id', function(req, res){
     res.json({
         success: true,
         message: 'successfully got users. Nice!',
-        users: mockUserData
+        users: req.params.id    
     })
+    console.log(req.params.id);
 })
+
